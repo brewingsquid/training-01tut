@@ -22,10 +22,11 @@ function App() {
         const listItems = await response.json();
         setItems(listItems);
         setFetchError(null);
-        setIsLoading(false);
       } catch (err) {
-        console.log(err.stack);
+        // console.log(err.stack);
         setFetchError(err.message);
+      } finally {
+        setIsLoading(false);
       }
     };
 
